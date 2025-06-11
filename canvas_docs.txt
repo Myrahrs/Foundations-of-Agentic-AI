@@ -1,0 +1,35 @@
+
+Canvas LMS Documentation
+
+1. Introduction
+Canvas is a web-based learning management system (LMS) designed to support online courses and facilitate learning. It provides a platform for educators to create, manage, and deliver course content, as well as tools for communication, collaboration, and assessment.
+
+2. Key Features
+- Course Creation: Instructors can create and organize course materials, including syllabi, assignments, quizzes, and multimedia content.
+- Communication: Canvas offers various communication tools, such as announcements, discussions, and messaging, to facilitate interaction between instructors and students.
+- Collaboration: Students can collaborate on group projects, participate in discussions, and share resources using Canvas's collaboration tools.
+- Assessment: Canvas provides tools for creating and grading assignments, quizzes, and exams. It also supports peer assessment and self-assessment.
+- Analytics: Instructors can track student progress and engagement through Canvas's analytics and reporting features.
+
+3. Getting Started
+To get started with Canvas, follow these steps:
+1. Create an account: Visit the Canvas website and sign up for an account using your email address.
+2. Set up your profile: Complete your profile by adding a profile picture, bio, and contact information.
+3. Create a course: Click on the "Create a Course" button and follow the prompts to set up your course.
+4. Add course content: Upload your course materials, such as syllabi, assignments, and multimedia content.
+5. Invite students: Send invitations to your students to join your course.
+
+4. Frequently Asked Questions (FAQs)
+Q: How do I reset my password?
+A: To reset your password, click on the "Forgot Password" link on the Canvas login page and follow the instructions.
+
+Q: How do I submit an assignment?
+A: To submit an assignment, navigate to the assignment page, click on the "Submit Assignment" button, and upload your file.
+
+Q: How do I contact my instructor?
+A: You can contact your instructor through the Canvas messaging system or by posting in the course discussion board.
+
+5. Support
+If you need assistance with Canvas, you can access the following support resources:
+- Canvas Help Center: Visit the Canvas Help Center for tutorials, guides, and troubleshooting tips.
+- Contact Support: If you need further assistance, you can contact Canvas support via email or phone.
