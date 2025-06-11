@@ -8,7 +8,7 @@ from langchain_community.vectorstores import FAISS
 from langchain_community.llms import OpenAI
 from langchain_community.document_loaders import TextLoader
 
-# Set your API key from Streamlit secrets
+# Set API key from Streamlit secrets
 os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 
 # Set page config
@@ -17,7 +17,7 @@ st.set_page_config(page_title="Canvas QA Assistant", layout="centered")
 st.title("📘 Ask Me About Canvas LMS")
 st.write("Upload documentation and ask questions!")
 
-# Load documents (if not already embedded)
+# Load documents
 @st.cache_resource
 def load_qa_chain():
     loader = TextLoader("canvas_docs.txt")
