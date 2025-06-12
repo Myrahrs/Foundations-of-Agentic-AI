@@ -67,6 +67,12 @@ Project Objectives
 
 ---
 
+Requirements
+- Python 3.13+
+- An OpenAI API Key
+- Dependencies listed in requirements.txt.
+
+
 Features
 
 - Upload one or more Canvas LMS documents (PDF or .txt).
@@ -89,7 +95,13 @@ python -m venv venv
 .
 env\Scripts ctivate     # On Windows
 
-3. Install Required Packages
+3. Create a file named .streamlit/secrets.toml in the project root with the following contents:
+
+toml
+OPENAI_API_KEY = "your_actual_openai_api_key"
+
+
+4. Install Required Packages
 
 pip install -r requirements.txt
 
@@ -97,7 +109,11 @@ If you encounter errors with missing packages, run:
 
 pip install tiktoken langchain-openai
 
-4. Run the App
+5. Prepare the Canvas Document
+
+Ensure your source Canvas LMS content is saved in a .txt file named canvas_docs.txt. Place this file in the project root folder. The chatbot will use this file to generate answers.
+
+6. Run the App
 
 streamlit run app.py
 
