@@ -33,3 +33,277 @@ A: You can contact your instructor through the Canvas messaging system or by pos
 If you need assistance with Canvas, you can access the following support resources:
 - Canvas Help Center: Visit the Canvas Help Center for tutorials, guides, and troubleshooting tips.
 - Contact Support: If you need further assistance, you can contact Canvas support via email or phone.
+
+
+Course Title: Introduction to Artificial Intelligence
+
+Instructor: Dr. Jane Doe
+Email: jane.doe@example.com
+Office Hours: Mondays and Wednesdays, 2:00 PM - 4:00 PM
+
+Course Description:
+This course provides an introduction to the fundamental concepts and techniques of artificial intelligence (AI). Topics include problem-solving, knowledge representation, reasoning, learning, and applications of AI.
+
+Syllabus:
+Week 1: Introduction to AI
+    - Overview of AI
+    - History of AI
+    - Applications of AI
+
+Week 2: Problem-Solving
+    - Search algorithms
+    - Game playing
+
+Week 3: Knowledge Representation
+    - Logic and inference
+    - Semantic networks
+
+Week 4: Reasoning
+    - Probabilistic reasoning
+    - Bayesian networks
+
+Week 5: Machine Learning
+    - Supervised learning
+    - Unsupervised learning
+
+Week 6: Neural Networks
+    - Introduction to neural networks
+    - Deep learning
+
+Week 7: Natural Language Processing
+    - Text processing
+    - Speech recognition
+
+Week 8: Robotics
+    - Introduction to robotics
+    - Robot motion planning
+
+Week 9: Computer Vision
+    - Image processing
+    - Object recognition
+
+Week 10: AI Ethics
+    - Ethical considerations in AI
+    - Bias and fairness in AI
+
+Week 11: AI in Practice
+    - Case studies of AI applications
+    - AI in industry
+
+Week 12: Review and Final Exam Preparation
+
+Assessments:
+- Assignment 1: Problem-Solving (Due: Week 3)
+- Assignment 2: Knowledge Representation (Due: Week 5)
+- Assignment 3: Machine Learning (Due: Week 7)
+- Midterm Exam (Week 6)
+- Assignment 4: Robotics (Due: Week 9)
+- Assignment 5: AI Ethics (Due: Week 11)
+- Final Exam (Week 12)
+
+Common Questions:
+Q: What is the attendance policy?
+A: Attendance is mandatory for all lectures and labs. Students are allowed up to 3 unexcused absences. More than 3 unexcused absences will result in a reduction of the final grade.
+
+Q: When is the final exam?
+A: The final exam is scheduled for Week 12. The exact date and time will be announced later in the semester.
+
+Q: How can I contact the instructor?
+A: You can contact the instructor via email at jane.doe@example.com or during office hours on Mondays and Wednesdays from 2:00 PM to 4:00 PM.
+
+Rubrics:
+Assignment 1: Problem-Solving
+- Correctness: 50%
+- Efficiency: 30%
+- Clarity: 20%
+
+Assignment 2: Knowledge Representation
+- Accuracy: 40%
+- Completeness: 40%
+- Presentation: 20%
+
+Assignment 3: Machine Learning
+- Implementation: 50%
+- Analysis: 30%
+- Report: 20%
+
+Assignment 4: Robotics
+- Design: 40%
+- Functionality: 40%
+- Documentation: 20%
+
+Assignment 5: AI Ethics
+- Argumentation: 50%
+- Research: 30%
+- Writing: 20%
+
+Policies:
+Attendance Policy:
+Attendance is mandatory for all lectures and labs. Students are allowed up to 3 unexcused absences. More than 3 unexcused absences will result in a reduction of the final grade.
+
+Grading Policy:
+- Assignments: 50%
+- Midterm Exam: 20%
+- Final Exam: 30%
+
+
+Course 1: Introduction to Artificial Intelligence
+
+Course Title: Introduction to Artificial Intelligence
+
+Syllabus:
+Week 1: Introduction to AI
+Week 2: History of AI
+Week 3: Machine Learning Basics
+Week 4: Neural Networks
+Week 5: Natural Language Processing
+Week 6: Computer Vision
+Week 7: Robotics
+Week 8: AI Ethics
+Week 9: AI in Healthcare
+Week 10: AI in Finance
+Week 11: AI in Education
+Week 12: Future of AI
+
+Assessments:
+- Assignment 1: Machine Learning Basics
+- Assignment 2: Neural Networks
+- Midterm Exam: Covering Weeks 1-6
+- Assignment 3: Natural Language Processing
+- Assignment 4: Computer Vision
+- Final Exam: Covering Weeks 7-12
+
+Common Questions:
+- Attendance Policy: Attendance is mandatory for all lectures and labs.
+- Contact Info: Professor John Doe, johndoe@university.edu
+- Exam Dates: Midterm Exam - Week 6, Final Exam - Week 12
+
+Rubrics:
+- Assignment 1: Machine Learning Basics
+  - Criteria: Understanding of concepts, application of algorithms, code quality
+  - Points: 30
+- Assignment 2: Neural Networks
+  - Criteria: Understanding of neural network architecture, implementation, results analysis
+  - Points: 30
+- Assignment 3: Natural Language Processing
+  - Criteria: Understanding of NLP techniques, implementation, results analysis
+  - Points: 30
+- Assignment 4: Computer Vision
+  - Criteria: Understanding of computer vision techniques, implementation, results analysis
+  - Points: 30
+
+Policies:
+- Attendance Policy: Attendance is mandatory for all lectures and labs.
+- Grading Policy: Assignments - 40%, Midterm Exam - 30%, Final Exam - 30%
+
+Course 2: Advanced AI Techniques
+
+Course Title: Advanced AI Techniques
+
+Syllabus:
+Week 1: Deep Learning
+Week 2: Reinforcement Learning
+Week 3: Generative Adversarial Networks
+Week 4: AI in Autonomous Systems
+Week 5: AI in Natural Language Understanding
+Week 6: AI in Image Generation
+Week 7: AI in Predictive Analytics
+Week 8: AI in Cybersecurity
+Week 9: AI in IoT
+Week 10: AI in Smart Cities
+Week 11: AI in Agriculture
+Week 12: AI in Climate Change
+
+Assessments:
+- Assignment 1: Deep Learning
+- Assignment 2: Reinforcement Learning
+- Midterm Exam: Covering Weeks 1-6
+- Assignment 3: Generative Adversarial Networks
+- Assignment 4: AI in Autonomous Systems
+- Final Exam: Covering Weeks 7-12
+
+Common Questions:
+- Attendance Policy: Attendance is mandatory for all lectures and labs.
+- Contact Info: Professor John Doe, johndoe@university.edu
+- Exam Dates: Midterm Exam - Week 6, Final Exam - Week 12
+
+Rubrics:
+- Assignment 1: Deep Learning
+  - Criteria: Understanding of deep learning concepts, implementation, results analysis
+  - Points: 30
+- Assignment 2: Reinforcement Learning
+  - Criteria: Understanding of reinforcement learning techniques, implementation, results analysis
+  - Points: 30
+- Assignment 3: Generative Adversarial Networks
+  - Criteria: Understanding of GANs, implementation, results analysis
+  - Points: 30
+- Assignment 4: AI in Autonomous Systems
+  - Criteria: Understanding of autonomous systems, implementation, results analysis
+  - Points: 30
+
+Policies:
+- Attendance Policy: Attendance is mandatory for all lectures and labs.
+- Grading Policy: Assignments - 40%, Midterm Exam - 30%, Final Exam - 30%
+
+Professionalism Score:
+- Criteria: Class participation, teamwork, communication skills
+- Points: 20
+
+Lecture Slides:
+- Week 1: Deep Learning - Introduction and Concepts
+- Week 2: Reinforcement Learning - Techniques and Applications
+- Week 3: Generative Adversarial Networks - Architecture and Implementation
+- Week 4: AI in Autonomous Systems - Overview and Case Studies
+
+Course 3: AI Applications and Internship
+
+Course Title: AI Applications and Internship
+
+Syllabus:
+Week 1: AI in Real-World Applications
+Week 2: AI in Business
+Week 3: AI in Healthcare
+Week 4: AI in Finance
+Week 5: AI in Education
+Week 6: AI in Entertainment
+Week 7: AI in Transportation
+Week 8: AI in Manufacturing
+Week 9: AI in Retail
+Week 10: AI in Marketing
+Week 11: AI in Customer Service
+Week 12: Internship Preparation
+
+Assessments:
+- Group Project: AI in Real-World Applications
+- Midterm Exam: Covering Weeks 1-6
+- Final Exam: Covering Weeks 7-12
+
+Common Questions:
+- Attendance Policy: Attendance is mandatory for all lectures and labs.
+- Contact Info: Professor John Doe, johndoe@university.edu
+- Exam Dates: Midterm Exam - Week 6, Final Exam - Week 12
+
+Rubrics:
+- Group Project: AI in Real-World Applications
+  - Criteria: Team collaboration, project implementation, results analysis
+  - Points: 50
+
+Internship Guide:
+- Finding an Internship: Tips and Resources
+- Preparing for an Internship: Resume and Interview Preparation
+- Internship Expectations: Professionalism, Communication, Teamwork
+
+Policies:
+- Attendance Policy: Attendance is mandatory for all lectures and labs.
+- Grading Policy: Group Project - 50%, Midterm Exam - 25%, Final Exam - 25%
+
+About the Professor
+
+Professor John Doe
+
+Publication List:
+1. Doe, J. (2020). Machine Learning Techniques for Predictive Analytics. Journal of AI Research, 45(3), 123-145.
+2. Doe, J. (2019). Neural Networks for Natural Language Processing. Journal of Computational Linguistics, 32(2), 67-89.
+3. Doe, J. (2018). AI in Healthcare: Applications and Challenges. Journal of Medical AI, 21(1), 45-67.
+4. Doe, J. (2017). Reinforcement Learning for Autonomous Systems. Journal of Robotics, 14(4), 89-112.
+5. Doe, J. (2016). Generative Adversarial Networks: A Comprehensive Review. Journal of AI Research, 39(2), 78-101.
