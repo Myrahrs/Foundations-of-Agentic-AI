@@ -1,6 +1,8 @@
 langchain
 langchain-community
-openai
 faiss-cpu
-tiktoken
-chromadb
+sentence-transformers
+torch
+streamlit
+tiktoken  # Only needed if you still support OpenAI
+chromadb  # Only needed if you're experimenting with Chroma vector store
