@@ -1,9 +1,12 @@
-transformers
-langchain
-langchain-community
-faiss-cpu
+langchain>=0.0.173
+langchain-community>=0.0.17
+transformers>=4.30.0
 sentence-transformers
-torch
+faiss-cpu
 streamlit
+torch
+tiktoken
+chromadb
+openai
 tiktoken  # Only needed if you still support OpenAI
 chromadb  # Only needed if you're experimenting with Chroma vector store
