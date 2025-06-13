@@ -1,14 +1,13 @@
-# app.py - Stockdale Canvas QA Streamlit App using Hugging Face
-
 import streamlit as st
 import os
 from langchain.chains import RetrievalQA
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain_community.document_loaders import TextLoader
-from langchain_community.llms import HuggingFaceHub
+from transformers import pipeline
+from langchain.llms import HuggingFacePipeline
 
-# Set Hugging Face API key
+# Set Hugging Face API key from Streamlit secrets
 os.environ["HUGGINGFACEHUB_API_TOKEN"] = st.secrets["HUGGINGFACE_API_TOKEN"]
 
 # Streamlit page setup
@@ -17,31 +16,39 @@ st.set_page_config(page_title="Canvas QA Assistant", layout="centered")
 st.title("📘 Ask Me About Canvas LMS")
 st.write("Upload documentation and ask questions!")
 
-# Load QA chain (cached for performance)
 @st.cache_resource
 def load_qa_chain():
-    # Load your Canvas documentation from txt
+    # Load your Canvas documentation from a txt file
     loader = TextLoader("canvas_docs.txt")
     documents = loader.load()
 
-    # Embeddings using sentence-transformers
+    # Create embeddings with sentence-transformers model
     embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+
+    # Create FAISS vector store from documents and embeddings
     vector_store = FAISS.from_documents(documents, embeddings)
     retriever = vector_store.as_retriever()
 
-    # Hugging Face LLM (flan-t5-base is free and fast)
-    llm = HuggingFaceHub(
-        repo_id="google/flan-t5-base",
-        model_kwargs={"temperature": 0.5, "max_length": 256}
+    # Create a Hugging Face pipeline for text2text-generation using flan-t5-base
+    hf_pipe = pipeline(
+        "text2text-generation",
+        model="google/flan-t5-base",
+        max_length=256,
+        temperature=0.5,
     )
 
-    # Build QA chain
-    return RetrievalQA(llm=llm, retriever=retriever)
+    # Wrap the HF pipeline in LangChain LLM interface
+    llm = HuggingFacePipeline(pipeline=hf_pipe)
 
+    # Build RetrievalQA chain using the retriever and LLM
+    return RetrievalQA.from_chain_type(llm=llm, retriever=retriever)
+
+# Load the QA chain (cached)
 qa_chain = load_qa_chain()
 
-# User interaction
+# User input and interaction
 query = st.text_input("🔎 Enter your question about Canvas LMS:")
+
 if st.button("Get Answer") and query.strip():
     with st.spinner("Thinking..."):
         try:
