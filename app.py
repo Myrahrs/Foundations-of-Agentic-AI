@@ -33,12 +33,14 @@ def load_qa_chain():
     hf_pipe = pipeline(
         "text2text-generation",
         model="google/flan-t5-base",
-        max_length=256,
-        temperature=0.5,
+        device=-1  # Use CPU; change to device=0 if GPU available
     )
 
-    # Wrap the HF pipeline in LangChain LLM interface
-    llm = HuggingFacePipeline(pipeline=hf_pipe)
+    # Wrap the HF pipeline in LangChain LLM interface, pass generation params here
+    llm = HuggingFacePipeline(
+        pipeline=hf_pipe,
+        model_kwargs={"max_length": 256, "temperature": 0.5}
+    )
 
     # Build RetrievalQA chain using the retriever and LLM
     return RetrievalQA.from_chain_type(llm=llm, retriever=retriever)
