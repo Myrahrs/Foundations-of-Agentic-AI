@@ -1,8 +1,6 @@
 
 # 📘 Canvas LMS Chatbot – Project 1: Foundations of Agentic AI
 
-# Canvas LMS Chatbot – Project 1: Foundations of Agentic AI
-
 ## Project Description
 This solo project is an exploration into building a chatbot that uses Retrieval-Augmented Generation (RAG) to answer questions about Canvas LMS documents. Users upload documentation (e.g., syllabi, schedules), and the chatbot retrieves relevant content and generates intelligent responses using natural language processing.
 
