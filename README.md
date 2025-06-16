@@ -120,6 +120,5 @@ If you use this code in academic work, please cite:
 
 ## Contact
 **Maintainer:** Myrah Stockdale  
-GitHub Issues: <https://github.com/Myrahrs/Foundations-of-Agentic-AI/issues>  
-Email: *myrah.stockdale@example.com*
+Email: *myrah.stockdale@gmail.com*
 
