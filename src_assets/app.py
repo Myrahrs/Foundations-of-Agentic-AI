@@ -18,8 +18,20 @@ st.write("Please ask questions!")
 
 @st.cache_resource
 def load_qa_chain():
-    # Load your Canvas documentation from a txt file
-    loader = TextLoader("data/canvas_docs.txt")
+    import requests
+from io import StringIO
+
+def load_qa_chain():
+    url = "https://raw.githubusercontent.com/Myrahrs/Foundations-of-Agentic-AI/AAIDC-Module-1-Project/data/canvas_docs.txt"
+    response = requests.get(url)
+    response.raise_for_status()  # throws error if not found
+
+    from langchain_community.document_loaders import TextLoader
+    from langchain_community.document_loaders.generic import GenericLoader
+
+    # Wrap string in a file-like object
+    text_io = StringIO(response.text)
+    loader = TextLoader(file=text_io)
     documents = loader.load()
 
     # Create embeddings with sentence-transformers model
