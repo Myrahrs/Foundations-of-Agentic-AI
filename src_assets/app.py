@@ -19,7 +19,7 @@ st.write("Upload documentation and ask questions!")
 @st.cache_resource
 def load_qa_chain():
     # Load your Canvas documentation from a txt file
-    loader = TextLoader("canvas_docs.txt")
+    loader = TextLoader("data/canvas_docs.txt")
     documents = loader.load()
 
     # Create embeddings with sentence-transformers model
