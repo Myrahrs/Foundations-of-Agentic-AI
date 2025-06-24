@@ -21,6 +21,7 @@ The app lets instructors or students upload Canvas‑related text files (syllabi
 
 Basic familiarity with the command line and virtual environments is assumed.
 
+
 ## Installation
 ```bash
 # 1. Clone the repository
@@ -35,13 +36,19 @@ $ source venv/bin/activate        # Windows: venv\Scripts\activate
 (venv) $ pip install -r requirements.txt
 ```
 
-## Environment Setup
-1. Create a Hugging Face **read‑access** token at <https://huggingface.co/settings/tokens>.
-2. Add the token to `.streamlit/secrets.toml`:
-   ```toml
-   HUGGINGFACE_API_TOKEN = "<your_token_here>"
-   ```
-3. If you plan to run on GPU, install CUDA‑compatible PyTorch and set `device=0` in `app.py`.
+## Setup
+1. Get a Hugging Face API token from [huggingface.co/settings/tokens](https://huggingface.co/settings/tokens).
+2. *Either*:
+   - **Option 1**: Create a `.env` file with:
+     ```python
+     HUGGINGFACEHUB_API_TOKEN=your_token_here
+     ```
+   - **Option 2**: For Streamlit Sharing, add the token to `st.secrets` under `HUGGINGFACE_API_TOKEN`.
+
+## Models Used
+- Embeddings: `sentence-transformers/all-MiniLM-L6-v2`
+- Text Generation: `google/flan-t5-base`
+
 
 ## Usage
 ```bash
