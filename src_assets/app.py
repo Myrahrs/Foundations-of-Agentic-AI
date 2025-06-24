@@ -13,8 +13,8 @@ os.environ["HUGGINGFACEHUB_API_TOKEN"] = st.secrets["HUGGINGFACE_API_TOKEN"]
 # Streamlit page setup
 st.set_page_config(page_title="Canvas QA Assistant", layout="centered")
 
-st.title("📘 Ask Me About Our Canvas LMS or AI Classes")
-st.write("Upload documentation and ask questions!")
+st.title("📘 Hi, I'm AskEd - Ask Me About our Canvas LMS or AI Classes")
+st.write("Please ask questions!")
 
 @st.cache_resource
 def load_qa_chain():
