@@ -52,7 +52,7 @@ $ source venv/bin/activate        # Windows: venv\Scripts\activate
 
 ## Usage
 ```bash
-(venv) $ streamlit run app.py
+(venv) $ streamlit run src/app.py
 ```
 Navigate to <http://localhost:8501>, upload one or more `.txt` documents, then enter questions such as:
 * *“What is the attendance policy?”*
