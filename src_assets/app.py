@@ -1,5 +1,7 @@
 import streamlit as st
 import os
+import requests  
+from io import StringIO
 from langchain.chains import RetrievalQA
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
