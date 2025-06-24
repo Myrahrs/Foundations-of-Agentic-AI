@@ -1,5 +1,0 @@
-Foundations_of_Agentic_AI_Project_1/
-├── app.py  ←  Streamlit app
-├── canvas_docs.txt  ← Source file
-├── .streamlit/
-│   └── secrets.toml  ← API key config
