@@ -1,6 +1,7 @@
 import streamlit as st
 import os
-import requests  
+import requests
+import tempfile
 from io import StringIO
 from langchain.chains import RetrievalQA
 from langchain_community.embeddings import HuggingFaceEmbeddings
@@ -20,43 +21,40 @@ st.write("Please ask questions!")
 
 @st.cache_resource
 def load_qa_chain():
-    import requests
-from io import StringIO
-
-def load_qa_chain():
+    # ✅ Load your Canvas documentation from GitHub
     url = "https://raw.githubusercontent.com/Myrahrs/Foundations-of-Agentic-AI/AAIDC-Module-1-Project/data/canvas_docs.txt"
     response = requests.get(url)
-    response.raise_for_status()  # throws error if not found
+    response.raise_for_status()
 
-    from langchain_community.document_loaders import TextLoader
-    from langchain_community.document_loaders.generic import GenericLoader
+    # ✅ Save content to a temporary file
+    with tempfile.NamedTemporaryFile(mode="w+", delete=False, suffix=".txt") as tmp_file:
+        tmp_file.write(response.text)
+        tmp_file_path = tmp_file.name
 
-    # Wrap string in a file-like object
-    text_io = StringIO(response.text)
-    loader = TextLoader(file=text_io)
+    # ✅ Load documents from the temp file
+    loader = TextLoader(tmp_file_path)
     documents = loader.load()
 
-    # Create embeddings with sentence-transformers model
+    # ✅ Create embeddings
     embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
-    # Create FAISS vector store from documents and embeddings
+    # ✅ Build vector store and retriever
     vector_store = FAISS.from_documents(documents, embeddings)
     retriever = vector_store.as_retriever()
 
-    # Create a Hugging Face pipeline for text2text-generation using flan-t5-base
+    # ✅ Setup Hugging Face text generation pipeline
     hf_pipe = pipeline(
         "text2text-generation",
         model="google/flan-t5-base",
-        device=-1  # Use CPU; change to device=0 if GPU available
+        device=-1  # Use CPU
     )
 
-    # Wrap the HF pipeline in LangChain LLM interface, pass generation params here
     llm = HuggingFacePipeline(
         pipeline=hf_pipe,
         model_kwargs={"max_length": 256, "temperature": 0.5}
     )
 
-    # Build RetrievalQA chain using the retriever and LLM
+    # ✅ Return QA chain
     return RetrievalQA.from_chain_type(llm=llm, retriever=retriever)
 
 # Load the QA chain (cached)
