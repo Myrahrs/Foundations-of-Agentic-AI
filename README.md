@@ -1,123 +1,119 @@
-# 📘 Canvas LMS Chatbot – Project 1: Foundations of Agentic AI
 
-A Retrieval‑Augmented Generation (RAG) assistant that answers questions about Canvas LMS course documents supplied by the user.
+# 📘 Canvas LMS Chatbot – AskEd 🚀  
+A lightweight, local RAG chatbot that answers questions about Canvas LMS course documents using LangChain + Hugging Face models.
 
 ---
 
-## Overview
-The app lets instructors or students upload Canvas‑related text files (syllabi, schedules, policies, etc.).  Each file is chunked, embedded, stored in a FAISS vector index, and retrieved on demand via LangChain’s `RetrievalQA` chain backed by a Flan‑T5 language model served from Hugging Face.  The result is a lightweight, fully local chatbot that returns concise, context‑grounded answers through a Streamlit web UI.
+## ✨ Features  
+✅ Upload and query **Canvas syllabi, schedules, and policies**  
+✅ Uses **FAISS for fast vector search**  
+✅ Retrieval-Augmented Generation powered by **Flan-T5**  
+✅ Built with **LangChain**, **Hugging Face**, and **Streamlit**  
+✅ No external database or cloud storage needed  
+✅ Clean **local deployment** and Streamlit UI  
+✅ QR code access for live demos  
 
-## Target Audience
-* **Students** – quickly locate grading policies, due dates, and lecture topics.
-* **Instructors / Course Designers** – provide self‑service answers for common questions and check the clarity of course docs.
-* **Educational Technologists & Researchers** – reference implementation of a small‑footprint RAG pipeline.
+---
 
-## Prerequisites
-| Requirement | Minimum Version | Notes |
-|-------------|-----------------|-------|
-| Python | 3.10 | Tested on 3.10 & 3.11 |
-| OS | Windows, macOS, Linux | CPU‑only by default (GPU optional) |
-| Hugging Face account | Free tier | Needed to generate an API token |
+## 📌 Getting Started  
 
-Basic familiarity with the command line and virtual environments is assumed.
+### **1️⃣ Install Dependencies**  
+You'll need **Python 3.10+** and a Hugging Face API key.
 
-
-## Installation
+#### **Terminal**
 ```bash
-# 1. Clone the repository
-$ git clone https://github.com/Myrahrs/Foundations-of-Agentic-AI.git
-$ cd Foundations-of-Agentic-AI
-
-# 2. Create & activate a virtual environment
-$ python -m venv venv
-$ source venv/bin/activate        # Windows: venv\Scripts\activate
-
-# 3. Install dependencies
-(venv) $ pip install -r requirements.txt
+git clone https://github.com/Myrahrs/Foundations-of-Agentic-AI.git
+cd Foundations-of-Agentic-AI
+git checkout AAIDC-Module-1-Project
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+pip install -r requirements.txt
 ```
 
-## Setup
-1. Get a Hugging Face API token from [huggingface.co/settings/tokens](https://huggingface.co/settings/tokens).
-2. *Either*:
-   - **Option 1**: Create a `.env` file with:
-     ```python
+---
+
+### **2️⃣ Set Up Your Hugging Face API Key**  
+1. Sign up at **[Hugging Face](https://huggingface.co/join)**  
+2. Go to **Settings → Access Tokens**  
+3. Create a token and save it in:  
+   - For local dev: `.env` file  
+     ```env
      HUGGINGFACEHUB_API_TOKEN=your_token_here
      ```
-   - **Option 2**: For Streamlit Sharing, add the token to `st.secrets` under `HUGGINGFACE_API_TOKEN`.
+   - For Streamlit Cloud: `.streamlit/secrets.toml`  
+     ```toml
+     HUGGINGFACE_API_TOKEN = "your_token_here"
+     ```
 
-## Models Used
-- Embeddings: `sentence-transformers/all-MiniLM-L6-v2`
-- Text Generation: `google/flan-t5-base`
+---
 
-
-## Usage
+### **3️⃣ Run the AskEd Chatbot**  
 ```bash
-(venv) $ streamlit run src/app.py
+streamlit run src_assets/app.py
 ```
-Navigate to <http://localhost:8501>, upload one or more `.txt` documents, then enter questions such as:
-* *“What is the attendance policy?”*
-* *“When is the final exam?”*
 
-The answer section will display context‑aware replies extracted from your uploads.
+Once the app starts, visit: [http://localhost:8501](http://localhost:8501)  
+Upload your `.txt` Canvas files and ask questions like:  
+*“What are the late submission penalties?”*  
+*“When is the Week 4 quiz?”*
 
-## Data Requirements
-* **Input format:** Plain‑text (`.txt`) files.  Convert PDFs/Word docs beforehand.
-* **Chunk size:** ~500 tokens with 20 token overlap (configurable in code).
-* **Index persistence:** FAISS index is kept in‑memory each session; add persistence if desired.
+---
 
-## Testing
-Automated tests are not yet included.  Manual smoke test:
-1. Run the app.
-2. Upload `canvas_docs.txt` (sample file).
-3. Ask *“What topics are in Week 3?”* → verify a sensible answer.
+## 🔍 Customization  
 
-Planned: `pytest` unit tests for embedding & retrieval functions and a CI workflow.
+| Component | Location | Description |
+|----------|----------|-------------|
+| 📄 Document Input | `data/canvas_docs.txt` | Source text for chatbot context |
+| 🧠 Embeddings | `sentence-transformers/all-MiniLM-L6-v2` | Used for FAISS vector indexing |
+| ✍️ Generator Model | `google/flan-t5-base` | Used for answer generation |
+| 🔧 Config | `app.py` | Chunk size, retriever settings, model kwargs |
 
-## Configuration
-Key options live in **`app.py`**:
-| Setting | Default | Description |
-|---------|---------|-------------|
-| `model` | `google/flan-t5-base` | Generation model |
-| `chunk_size` | 500 | Tokens per chunk |
-| `vector_store` | FAISS | Swap for Chroma, Weaviate, etc. |
-| `temperature` | 0.5 | Generation creativity |
+You can swap in different models, vector stores, or add persistence.
 
-## Methodology
-1. **Load & Chunk Docs** – LangChain `TextLoader` + `RecursiveCharacterTextSplitter`.
-2. **Embed** – `sentence-transformers/all-MiniLM-L6-v2` via `HuggingFaceEmbeddings`.
-3. **Index** – vectors stored in FAISS for ANN lookup.
-4. **Retrieve** – top‑k similarity search (`k=4`).
-5. **Generate** – retrieved context + user query passed to Flan‑T5.
-6. **Serve** – Streamlit UI orchestrates the full pipeline.
+---
 
-## Performance
-| Metric | Value | Notes |
-|--------|-------|-------|
-| Avg. retrieval latency | < 300 ms on CPU | 200 docs, i7‑1185G7 |
-| End‑to‑end response | ~2–3 s | Flan‑T5 base on CPU |
+## 🧪 Testing & Demo  
+1. Load the app  
+2. Upload a sample file  
+3. Ask a Canvas-related question  
 
-For larger corpora or lower latency, enable GPU or switch to a distilled model.
+Include a QR code in documentation or slides for quick demo access.
 
-## License
-This project is released under the **Hugging Face License** – free for non‑commercial or educational use.  See `LICENSE` for full terms.
+---
 
-## Contributing
-Pull requests are welcome!  Please:
-1. Fork the repo and create a feature branch.
-2. Follow PEP 8 style and write docstrings.
-3. Add/adjust tests where relevant.
-4. Open a PR with a clear description.
+## 🛠 Troubleshooting  
+Check out the [Troubleshooting Guide](AskEd_Troubleshooting_Guide.md) for help with:  
+- API key errors  
+- Missing packages  
+- Model loading failures  
+- Empty or irrelevant responses  
 
-## Changelog
+---
+
+## 📜 License  
+**Hugging Face License** – Free for educational/non-commercial use. See `LICENSE` for terms.
+
+---
+
+## 🎤 Contributions  
+Pull requests and ideas welcome!  
+1. Fork the repo  
+2. Follow PEP8 and docstring guidelines  
+3. Open a PR with clear description  
+
+---
+
+## 📅 Changelog  
 | Date | Version | Notes |
 |------|---------|-------|
-| 2025‑06‑16 | 1.0.0 | Initial public release |
+| 2025‑06‑16 | 1.0.0 | Initial release of AskEd |
 
-## Citation
-If you use this code in academic work, please cite:
+---
+
+## 📚 Citation  
 ```bibtex
 @misc{stockdale2025canvasrag,
-  title        = {Canvas LMS RAG Chatbot},
+  title        = {Canvas LMS RAG Chatbot},
   author       = {Stockdale, Myrah},
   year         = {2025},
   howpublished = {GitHub},
@@ -125,7 +121,8 @@ If you use this code in academic work, please cite:
 }
 ```
 
-## Contact
-**Maintainer:** Myrah Stockdale  
-Email: *myrah.stockdale@gmail.com*
+---
 
+## 📬 Contact  
+**Maintainer:** Myrah Stockdale  
+Email: *myrah.stockdale@gmail.com*
